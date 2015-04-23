@@ -5,12 +5,15 @@
   }
 </style>
 
+<p><%= link_to "Add a New Movie", "/movies/new" %></p>
+
 <table class="table table-striped">
   <tr>
     <th>Title</th>
     <th>Year</th>
     <th>Running Time</th>
     <th>Rating</th>
+    <th></th>
   </tr>
   <% @movies.each do |movie| %>
     <tr>
@@ -25,6 +28,7 @@
           &#9734;
         <% end %>
       </td>
+      <td><%= link_to "Delete", "/movies/#{movie.id}/delete" %></td>
     </tr>
   <% end %>
 

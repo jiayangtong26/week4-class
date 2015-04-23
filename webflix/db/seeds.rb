@@ -15,7 +15,7 @@ imdb_movie_data.each do |movie_info|
   movie.plot = movie_info['Plot']
   movie.poster_url = movie_info['Poster']
   movie.rated = movie_info['Rated']
-  movie.stars = rand(1..10)
+  movie.stars = rand(7..10)
   movie.save
 end
 
