@@ -1,0 +1,17 @@
+<style>
+  h1 {
+    border-bottom: solid 3px gray;
+    margin-bottom: 24px;
+  }
+</style>
+
+<ul>
+
+  <% @movies.each do |movie| %>
+    <li>
+      <%= link_to movie.title, "/movies/#{movie.id}" %>
+      (<%= movie[:year] %>)
+    </li>
+  <% end %>
+
+</ul>

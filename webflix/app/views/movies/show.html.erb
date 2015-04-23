@@ -1,0 +1,36 @@
+<style>
+  h2 {
+    color: white;
+    background: #555;
+    padding: 6px;
+    text-align: center;
+  }
+  .rating {
+    color: gray;
+    border: solid 1px gray;
+    padding: 4px;
+  }
+  img {
+    float: left;
+    margin-right: 40px;
+    box-shadow: 8px 8px 4px gray;
+    width: "400px";
+  }
+  p {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+</style>
+
+<h2><%= @movie.title %></h2>
+
+<p>
+  <span class="rating">Rated <%= @movie.rated %></span>
+  <%= @movie[:runtime] %>
+</p>
+
+<%= image_tag @movie.poster_url %>
+
+<h4>Directed by: <%= @movie.director %></h4>
+
+<p><%= @movie.plot %></p>
