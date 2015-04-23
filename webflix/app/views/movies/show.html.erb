@@ -25,12 +25,19 @@
 <h2><%= @movie.title %></h2>
 
 <p>
-  <span class="rating">Rated <%= @movie.rated %></span>
-  <%= @movie[:runtime] %>
+  <span class="rating">Rated: <%= @movie.rated %></span>
+  <%= @movie.runtime %> minutes
+  <% @movie.stars.times do %>
+    &#9733;
+  <% end %>
+  <% (10 - @movie.stars).times do %>
+    &#9734;
+  <% end %>
+
 </p>
 
 <%= image_tag @movie.poster_url %>
 
-<h4>Directed by: <%= @movie.director %></h4>
+<h4>Directed by: <%= Director.find_by(id: @movie.director_id).name %></h4>
 
 <p><%= @movie.plot %></p>

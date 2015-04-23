@@ -5,13 +5,27 @@
   }
 </style>
 
-<ul>
-
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Running Time</th>
+    <th>Rating</th>
+  </tr>
   <% @movies.each do |movie| %>
-    <li>
-      <%= link_to movie.title, "/movies/#{movie.id}" %>
-      (<%= movie[:year] %>)
-    </li>
+    <tr>
+      <td><%= link_to movie.title, "/movies/#{movie.id}" %></td>
+      <td><%= movie.year %></td>
+      <td><%= movie.runtime %> minutes</td>
+      <td>
+        <% movie.stars.times do %>
+          &#9733;
+        <% end %>
+        <% (10 - movie.stars).times do %>
+          &#9734;
+        <% end %>
+      </td>
+    </tr>
   <% end %>
 
-</ul>
+</table>

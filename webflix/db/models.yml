@@ -2,6 +2,7 @@ Movie
   title: string
   year: integer
   rated: string
+  stars: integer
   runtime: integer
   plot: text
   poster_url: string
