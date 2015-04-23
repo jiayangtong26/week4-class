@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
     @movie.plot = params[:plot]
     @movie.poster_url = params[:poster_url]
     @movie.save
-    redirect_to "/movies/#{@movie.id}"
+    redirect_to "/movies/"
   end
 
   def destroy

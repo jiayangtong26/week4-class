@@ -28,6 +28,7 @@
           &#9734;
         <% end %>
       </td>
+      <td><%= link_to "Edit...", "/movies/#{movie.id}/edit" %></td>
       <td><%= link_to "Delete", "/movies/#{movie.id}/delete" %></td>
     </tr>
   <% end %>
